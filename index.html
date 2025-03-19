@@ -48,8 +48,6 @@
             <p>Be among the first to experience the future of sustainable search.</p>
             <form name="waitlist" method="POST" data-netlify="true" class="waitlist-form">
                 <input type="hidden" name="form-name" value="waitlist" />
-                <input type="hidden" name="subject" value="New Waitlist Submission" />
-                <input type="hidden" name="replyto" value="%email%" />
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>
@@ -197,10 +195,7 @@
                     const formData = new FormData(this);
                     const response = await fetch('/', {
                         method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/x-www-form-urlencoded',
-                        },
-                        body: new URLSearchParams(formData).toString()
+                        body: formData
                     });
 
                     if (response.ok) {
