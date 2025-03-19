@@ -1,0 +1,31 @@
+[build]
+  publish = "/"
+  command = ""
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Form handling configuration
+[[plugins]]
+  package = "@netlify/plugin-form-handler"
+
+# Email notifications configuration
+[build.environment]
+  NETLIFY_USE_YARN = "true"
+
+# Form settings
+[forms]
+  [forms.handlers]
+    [forms.handlers.email]
+      to = "your-email@example.com"  # Replace with your email address
+      from = "EcoSearch Waitlist <noreply@ecosearch.com>"
+      subject = "New Waitlist Submission"
+      template = "email-template.html" 
