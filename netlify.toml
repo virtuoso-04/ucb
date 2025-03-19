@@ -1,11 +1,101 @@
 [build]
   publish = "/"
-  command = ""
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+  package = "@netlify/plugin-form-handler"
+
+[build.processing]
+  skip_processing = false
+
+[build.processing.html]
+  pretty_urls = true
+
+[build.processing.css]
+  bundle = true
+  minify = true
+
+[build.processing.js]
+  bundle = true
+  minify = true
+
+[build.processing.images]
+  compress = true
+
+[build.processing.skip_processing]
+  - "*.md"
+  - "*.txt"
+  - "*.json"
+  - "*.xml"
+  - "*.rss"
+  - "*.atom"
+  - "*.yaml"
+  - "*.yml"
+  - "*.toml"
+  - "*.csv"
+  - "*.pdf"
+  - "*.doc"
+  - "*.docx"
+  - "*.xls"
+  - "*.xlsx"
+  - "*.zip"
+  - "*.tar.gz"
+  - "*.rar"
+  - "*.7z"
+  - "*.gz"
+  - "*.swf"
+  - "*.flv"
+  - "*.mov"
+  - "*.mp4"
+  - "*.m4v"
+  - "*.mp3"
+  - "*.m4a"
+  - "*.wav"
+  - "*.ogg"
+  - "*.webm"
+  - "*.webp"
+  - "*.ico"
+  - "*.png"
+  - "*.jpg"
+  - "*.jpeg"
+  - "*.gif"
+  - "*.svg"
+  - "*.woff"
+  - "*.woff2"
+  - "*.ttf"
+  - "*.eot"
+  - "*.otf"
+  - "*.css"
+  - "*.js"
+  - "*.map"
+  - "*.html"
+  - "*.htm"
+  - "*.php"
+  - "*.asp"
+  - "*.aspx"
+  - "*.jsp"
+  - "*.cgi"
+  - "*.pl"
+  - "*.py"
+  - "*.rb"
+  - "*.sh"
+  - "*.bat"
+  - "*.cmd"
+  - "*.exe"
+  - "*.dll"
+  - "*.so"
+  - "*.dylib"
+  - "*.class"
+  - "*.jar"
+  - "*.war"
+  - "*.ear"
 
 # Form handling configuration
 [forms]
