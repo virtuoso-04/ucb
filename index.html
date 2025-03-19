@@ -48,8 +48,8 @@
             <p>Be among the first to experience the future of sustainable search.</p>
             <form name="waitlist" method="POST" data-netlify="true" class="waitlist-form">
                 <input type="hidden" name="form-name" value="waitlist" />
-                <input type="hidden" name="subject" value="New Waitlist Submission" />
-                <input type="hidden" name="replyto" value="%email%" />
+                <input type="hidden" name="subject" value="New Waitlist Submission from {{ .name }}" />
+                <input type="hidden" name="replyto" value="{{ .email }}" />
                 <div class="form-group">
                     <input type="text" name="name" placeholder="Your Name" required>
                 </div>

@@ -101,7 +101,14 @@
 [forms]
   [forms.handlers]
     [forms.handlers.email]
-      to = "your-email@example.com" 
-      from = "EcoSearch Waitlist <noreply@ecosearch.com>"
+      to = ["your-email@example.com"]  # Replace with your email
+      from = "EcoSearch Waitlist <no-reply@netlify.com>"
       subject = "New Waitlist Submission"
-      template = "email-template.html" 
+      template = "email-template.html"
+      [forms.handlers.email.headers]
+        X-Priority = "1"
+        X-MSMail-Priority = "High"
+        Importance = "high"
+        Priority = "urgent"
+      [forms.handlers.email.files]
+        - "confirmation-email.html" 
