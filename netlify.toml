@@ -101,7 +101,7 @@
 [forms]
   [forms.handlers]
     [forms.handlers.email]
-      to = "your-email@example.com"  # Replace with your email address
+      to = "your-email@example.com" 
       from = "EcoSearch Waitlist <noreply@ecosearch.com>"
       subject = "New Waitlist Submission"
       template = "email-template.html" 
