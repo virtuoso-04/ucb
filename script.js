@@ -56,16 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitButton.disabled = true;
                 
                 const formData = new FormData(form);
-                const response = await fetch('/', {
+                await fetch('/', {
                     method: 'POST',
-                    headers: {
-                        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-                    },
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: new URLSearchParams(formData).toString()
-                });
-                
-                if (response.ok) {
+                })
+                .then(() => {
                     // Show success message
                     const successMsg = document.createElement('div');
                     successMsg.className = 'form-success';
@@ -83,9 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         successMsg.classList.remove('visible');
                         setTimeout(() => successMsg.remove(), 300);
                     }, 5000);
-                } else {
-                    throw new Error('Form submission failed');
-                }
+                });
             } catch (error) {
                 // Show error message
                 const errorMsg = document.createElement('div');

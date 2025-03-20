@@ -18,13 +18,12 @@
         <div class="hero-content">
             <h1>World's first <span class="highlight">Green</span> AI</h1>
             <div class="email-box">
-                <form name="waitlist" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <form name="waitlist" method="POST" data-netlify="true">
                     <input type="hidden" name="form-name" value="waitlist" />
-                    <p class="hidden">
-                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-                    </p>
-                    <input type="email" name="email" id="userEmail" placeholder="name@email.com" required />
-                    <button type="submit">Join the waitlist</button>
+                    <div class="form-group">
+                        <input type="email" name="email" id="userEmail" placeholder="name@email.com" required />
+                        <button type="submit">Join the waitlist</button>
+                    </div>
                 </form>
             </div>
         </div>
