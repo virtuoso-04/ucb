@@ -1,5 +1,15 @@
 [build]
   publish = "/"
+  skip_files = [
+    "*.md",
+    "*.txt",
+    "*.json",
+    "*.xml",
+    "*.pdf",
+    "*.doc",
+    "*.docx",
+    "*.zip"
+  ]
 
 [build.environment]
   NODE_VERSION = "18"
@@ -32,94 +42,14 @@
 [forms]
   [forms.waitlist]
     name = "waitlist"
-    [forms.waitlist.handlers]
-      [forms.waitlist.handlers.email]
-        to = ["your-email@example.com"]
-        from = "EcoSearch Waitlist <no-reply@netlify.com>"
-        subject = "New Waitlist Submission"
 
-[build.processing.skip_processing]
-  - "*.md"
-  - "*.txt"
-  - "*.json"
-  - "*.xml"
-  - "*.rss"
-  - "*.atom"
-  - "*.yaml"
-  - "*.yml"
-  - "*.toml"
-  - "*.csv"
-  - "*.pdf"
-  - "*.doc"
-  - "*.docx"
-  - "*.xls"
-  - "*.xlsx"
-  - "*.zip"
-  - "*.tar.gz"
-  - "*.rar"
-  - "*.7z"
-  - "*.gz"
-  - "*.swf"
-  - "*.flv"
-  - "*.mov"
-  - "*.mp4"
-  - "*.m4v"
-  - "*.mp3"
-  - "*.m4a"
-  - "*.wav"
-  - "*.ogg"
-  - "*.webm"
-  - "*.webp"
-  - "*.ico"
-  - "*.png"
-  - "*.jpg"
-  - "*.jpeg"
-  - "*.gif"
-  - "*.svg"
-  - "*.woff"
-  - "*.woff2"
-  - "*.ttf"
-  - "*.eot"
-  - "*.otf"
-  - "*.css"
-  - "*.js"
-  - "*.map"
-  - "*.html"
-  - "*.htm"
-  - "*.php"
-  - "*.asp"
-  - "*.aspx"
-  - "*.jsp"
-  - "*.cgi"
-  - "*.pl"
-  - "*.py"
-  - "*.rb"
-  - "*.sh"
-  - "*.bat"
-  - "*.cmd"
-  - "*.exe"
-  - "*.dll"
-  - "*.so"
-  - "*.dylib"
-  - "*.class"
-  - "*.jar"
-  - "*.war"
-  - "*.ear"
+[forms.waitlist.handlers.email]
+  to = ["your-email@example.com"]
+  from = "EcoSearch Waitlist <no-reply@netlify.com>"
+  subject = "New Waitlist Submission"
 
-# Form handling configuration
-[forms]
-  [forms.handlers]
-    [forms.handlers.email]
-      to = ["your-email@example.com"]  # Replace with your email
-      from = "EcoSearch Waitlist <no-reply@netlify.com>"
-      subject = "New Waitlist Submission"
-      template = "email-template.html"
-      [forms.handlers.email.headers]
-        X-Priority = "1"
-        X-MSMail-Priority = "High"
-        Importance = "high"
-        Priority = "urgent"
-      [forms.handlers.email.files]
-        - "confirmation-email.html"
-
-<input type="hidden" name="form-name" value="waitlist" /> 
+[forms.waitlist.handlers.email.headers]
+  X-Priority = "1"
+  X-MSMail-Priority = "High"
+  Importance = "high"
+  Priority = "urgent"
