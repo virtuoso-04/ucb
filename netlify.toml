@@ -1,17 +1,17 @@
 [build]
   publish = "/"
-  command = "# no build command"
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
+[forms]
+  [forms.waitlist]
+    name = "waitlist"
+
 [build.environment]
   NODE_VERSION = "18"
-
-[[plugins]]
-  package = "@netlify/plugin-form-handler"
 
 [build.processing]
   skip_processing = false
@@ -29,6 +29,9 @@
 
 [build.processing.images]
   compress = true
+
+[[plugins]]
+  package = "@netlify/plugin-form-handler"
 
 [build.processing.skip_processing]
   - "*.md"
@@ -112,4 +115,6 @@
         Importance = "high"
         Priority = "urgent"
       [forms.handlers.email.files]
-        - "confirmation-email.html" 
+        - "confirmation-email.html"
+
+<input type="hidden" name="form-name" value="waitlist" /> 
