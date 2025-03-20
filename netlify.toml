@@ -1,17 +1,13 @@
 [build]
   publish = "/"
 
+[build.environment]
+  NODE_VERSION = "18"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-[forms]
-  [forms.waitlist]
-    name = "waitlist"
-
-[build.environment]
-  NODE_VERSION = "18"
 
 [build.processing]
   skip_processing = false
@@ -32,6 +28,15 @@
 
 [[plugins]]
   package = "@netlify/plugin-form-handler"
+
+[forms]
+  [forms.waitlist]
+    name = "waitlist"
+    [forms.waitlist.handlers]
+      [forms.waitlist.handlers.email]
+        to = ["your-email@example.com"]
+        from = "EcoSearch Waitlist <no-reply@netlify.com>"
+        subject = "New Waitlist Submission"
 
 [build.processing.skip_processing]
   - "*.md"
