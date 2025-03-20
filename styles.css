@@ -78,9 +78,9 @@ html {
 
 /* Logo Styles */
 .logo {
-    font-size: 24px;
-    font-weight: 600;
-    text-decoration: none;
+    font-size: 30px;
+    font-weight:600;
+    text-decoration:none;
 }
 
 .logo span:first-child {
@@ -113,10 +113,10 @@ html {
 
 /* Hero Typography */
 .hero-content h1 {
-    font-size: 64px;
+    font-size: 72px;
     line-height: 1.2;
     margin-bottom: 40px;
-    font-weight: 600;
+    font-weight: 1900;
 }
 
 .hero-content h1 .highlight {
@@ -197,20 +197,16 @@ html {
 .feature-item {
     text-align: center;
     background: transparent;
-    padding: 0;
+    padding: 10px;
     border: none;
-    box-shadow: none;
-}
-
-.feature-item:hover {
-    transform: none;
     box-shadow: none;
 }
 
 /* Feature Icons */
 .feature-icon {
-    width: 48px;
-    height: 48px;
+    width: 80px;
+    height: 80px;
+    color:#7da375;
     margin: 0 auto 24px;
     display: flex;
     align-items: center;
@@ -222,11 +218,22 @@ html {
     font-size: 24px;
     margin-bottom: 16px;
     font-weight: 600;
-    color: var(--text-primary);
+    color: var(--hover-color);
     position: relative;
     display: inline-block;
 }
-
+.feature-item h3::before {
+    content: '';
+    color: #7da375;
+    position: absolute;
+    bottom: -4px;
+    rotate: 10;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: var(--hover-color);
+    opacity: 0.3;
+}
 /* Underline effect for feature titles */
 .feature-item h3::after {
     content: '';
@@ -237,6 +244,11 @@ html {
     height: 2px;
     background-color: var(--accent-color);
     opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.feature-item h3:hover::after {
+    opacity: 0.6;
 }
 
 /* Feature Description */
@@ -244,9 +256,8 @@ html {
     font-size: 18px;
     line-height: 1.6;
     color: var(--text-secondary);
-    margin: 0;
-    max-width: 400px;
     margin: 0 auto;
+    max-width: 400px;
 }
 
 /* Responsive Design */
@@ -310,15 +321,13 @@ html {
     }
 }
 
-/* ==========================================================================
-   Utility Classes
-   ========================================================================== */
-.smooth-scroll-wrapper,
-.smooth-scroll-container {
-    display: none;
-}
+.footer{
+    background-color: var(--hover-color);
+    color: var(--bg-color);
+    padding: 20px;
+    text-align: start;
+    font-size: 14px;
+    line-height: 1.6;
+    border-top: 1px solid var(--border-color);
 
-/* Hide Theme Toggle */
-.theme-toggle {
-    display: none;
 }
