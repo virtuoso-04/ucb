@@ -144,47 +144,43 @@ function updateThemeIcon(theme) {
     }
 }
 
-// Form submission handling
-const waitlistForm = document.querySelector('.waitlist-form');
-if (waitlistForm) {
-    waitlistForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        const submitBtn = this.querySelector('.submit-btn');
-        if (!submitBtn) return;
+// Form submission handler
+function handleWaitlistSubmit(event) {
+    event.preventDefault();
+    
+    // Get the email input value
+    const emailInput = document.getElementById('userEmail');
+    const userEmail = emailInput.value;
+    
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userEmail)) {
+        alert('Please enter a valid email address');
+        return;
+    }
 
-        const originalText = submitBtn.textContent;
-        
-        // Show loading state
-        submitBtn.textContent = 'Submitting...';
-        submitBtn.disabled = true;
-
-        try {
-            const formData = new FormData(this);
-            const response = await fetch('/', {
-                method: 'POST',
-                headers: {
-                    'Accept': 'application/json'
-                },
-                body: formData
-            });
-
-            if (response.ok) {
-                // Show success state
-                submitBtn.textContent = 'Thank You!';
-                this.reset();
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            // Show error state
-            submitBtn.textContent = 'Error! Try Again';
-            console.error('Form submission error:', error);
-        } finally {
-            // Reset button after 3 seconds
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.disabled = false;
-            }, 3000);
-        }
-    });
+    // Replace this email with your designated email address
+    const designatedEmail = 'your-email@domain.com';
+    
+    // Create mailto link with subject and body
+    const subject = 'New Waitlist Signup';
+    const body = `New signup request from: ${userEmail}`;
+    const mailtoLink = `mailto:${designatedEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Clear the form
+    emailInput.value = '';
+    
+    // Show success message
+    alert('Thank you for joining our waitlist!');
 }
+
+// Add event listener for form submission
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('waitlistForm');
+    if (form) {
+        form.addEventListener('submit', handleWaitlistSubmit);
+    }
+});

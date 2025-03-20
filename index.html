@@ -18,8 +18,10 @@
         <div class="hero-content">
             <h1>World's first <span class="highlight">Green</span> AI</h1>
             <div class="email-box">
-                <input type="email" placeholder="name@email.com" />
-                <button>Join the waitlist</button>
+                <form id="waitlistForm" onsubmit="handleWaitlistSubmit(event)">
+                    <input type="email" id="userEmail" placeholder="name@email.com" required />
+                    <button type="submit">Join the waitlist</button>
+                </form>
             </div>
         </div>
     </section>
