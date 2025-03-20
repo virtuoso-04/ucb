@@ -3,229 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoSearch - Green Search Engine</title>
+    <title>EcoSearch - World's First Green AI</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">EcoSearch 🌱</div>
-            <button class="menu-btn" aria-label="Toggle menu">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#search">Search</a></li>
-                <li><a href="#waitlist">Join Waitlist</a></li>
-            </ul>
-        </nav>
-    </header>
-    
+    <nav class="navbar">
+        <a href="/" class="logo">
+            <span>Eco</span><span>Search</span>
+        </a>
+    </nav>
+
     <section id="hero">
         <div class="hero-content">
-            <h1>Search with a Purpose 🌿</h1>
-            <p>Every search you make helps plant trees and protect the planet.</p>
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Search the web..." aria-label="Search input">
-                <button id="search-btn" aria-label="Search">
-                    <i class="fas fa-search"></i>
-                </button>
+            <h1>World's first <span class="highlight">Green</span> AI</h1>
+            <div class="email-box">
+                <input type="email" placeholder="name@email.com" />
+                <button>Join the waitlist</button>
             </div>
         </div>
     </section>
-    
-    <section id="about" class="info-section">
-        <h2>About EcoSearch</h2>
-        <p>EcoSearch is a sustainable search engine that donates ad revenue to environmental causes. Join us in making a difference!</p>
-    </section>
 
-    <section id="waitlist" class="waitlist-section">
-        <div class="waitlist-content">
-            <h2>Join Our Waitlist</h2>
-            <p>Be among the first to experience the future of sustainable search.</p>
-            <form name="waitlist" method="POST" data-netlify="true" class="waitlist-form">
-                <input type="hidden" name="form-name" value="waitlist" />
-                <input type="hidden" name="subject" value="New Waitlist Submission from {{ .name }}" />
-                <input type="hidden" name="replyto" value="{{ .email }}" />
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
+    <section class="features-section">
+        <h2>Build sustainable system's with your search</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M16 28c6.627 0 12-5.373 12-12S22.627 4 16 4 4 9.373 4 16s5.373 12 12 12z" stroke="#8EB486" stroke-width="2"/>
+                        <path d="M16 22c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6z" fill="#8EB486"/>
+                    </svg>
                 </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Your Email" required>
+                <h3>Climate Driven</h3>
+                <p>We put the revenue earned to work with climate investments in renewables and plantation drives.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M14 22c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zM26 26l-6-6" stroke="#8EB486" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
                 </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Tell us why you're interested in EcoSearch" required></textarea>
+                <h3>Optimized Search</h3>
+                <p>We provide quality search results, reducing energy consumption by 300%</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M16 20a4 4 0 100-8 4 4 0 000 8z" fill="#8EB486"/>
+                        <path d="M25 12H7a2 2 0 00-2 2v10a2 2 0 002 2h18a2 2 0 002-2V14a2 2 0 00-2-2z" stroke="#8EB486" stroke-width="2"/>
+                        <path d="M11 12V8a5 5 0 0110 0v4" stroke="#8EB486" stroke-width="2"/>
+                    </svg>
                 </div>
-                <button type="submit" class="submit-btn">Join Waitlist</button>
-            </form>
+                <h3>Privacy First</h3>
+                <p>We don't collect or store any data. We are privacy focused ai search engine.</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <circle cx="16" cy="16" r="12" stroke="#8EB486" stroke-width="2"/>
+                        <path d="M16 16m-6 0a6 6 0 1 0 12 0a6 6 0 1 0-12 0" fill="#8EB486"/>
+                    </svg>
+                </div>
+                <h3>Minimal Design</h3>
+                <p>Our Design System is minimal to reduce the carbon footprints with user interaction.</p>
+            </div>
         </div>
     </section>
-    
+
     <footer>
-        <p>&copy; 2025 EcoSearch. Helping the planet, one search at a time. 🌎</p>
+        <p>© 2025 EcoSearch</p>
     </footer>
 
-    <button class="theme-toggle" aria-label="Toggle theme">
-        <span class="theme-icon">🌱</span>
-    </button>
-
-    <script>
-        // Mobile menu functionality
-        const menuBtn = document.querySelector('.menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuBtn.querySelector('i').classList.toggle('fa-bars');
-            menuBtn.querySelector('i').classList.toggle('fa-times');
-        });
-
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
-                navLinks.classList.remove('active');
-                menuBtn.querySelector('i').classList.add('fa-bars');
-                menuBtn.querySelector('i').classList.remove('fa-times');
-            }
-        });
-
-        // Search functionality
-        document.getElementById("search-btn").addEventListener("click", function() {
-            const query = document.getElementById("search-input").value;
-            if (query) {
-                window.location.href = `https://www.google.com/search?q=${query}`;
-            }
-        });
-
-        // Enter key for search
-        document.getElementById("search-input").addEventListener("keypress", function(e) {
-            if (e.key === "Enter") {
-                const query = this.value;
-                if (query) {
-                    window.location.href = `https://www.google.com/search?q=${query}`;
-                }
-            }
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Intersection Observer for fade-in animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all sections including waitlist
-        document.querySelectorAll('.info-section, .waitlist-section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                    // Close mobile menu after clicking
-                    navLinks.classList.remove('active');
-                    menuBtn.querySelector('i').classList.add('fa-bars');
-                    menuBtn.querySelector('i').classList.remove('fa-times');
-                }
-            });
-        });
-
-        // Theme toggle functionality
-        const themeToggle = document.querySelector('.theme-toggle');
-        const themeIcon = document.querySelector('.theme-icon');
-        
-        // Check for saved theme preference
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            updateThemeIcon(savedTheme);
-        }
-
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            updateThemeIcon(newTheme);
-        });
-
-        function updateThemeIcon(theme) {
-            themeIcon.textContent = theme === 'dark' ? '🌱' : '🌱';
-        }
-
-        // Form submission handling
-        const waitlistForm = document.querySelector('.waitlist-form');
-        if (waitlistForm) {
-            waitlistForm.addEventListener('submit', async function(e) {
-                e.preventDefault();
-                const submitBtn = this.querySelector('.submit-btn');
-                const originalText = submitBtn.textContent;
-                
-                // Show loading state
-                submitBtn.textContent = 'Submitting...';
-                submitBtn.disabled = true;
-
-                try {
-                    const formData = new FormData(this);
-                    const response = await fetch('/', {
-                        method: 'POST',
-                        body: formData
-                    });
-
-                    if (response.ok) {
-                        // Show success state
-                        submitBtn.textContent = 'Thank You!';
-                        this.reset();
-                        
-                        // Reset button after 3 seconds
-                        setTimeout(() => {
-                            submitBtn.textContent = originalText;
-                            submitBtn.disabled = false;
-                        }, 3000);
-                    } else {
-                        throw new Error('Form submission failed');
-                    }
-                } catch (error) {
-                    // Show error state
-                    submitBtn.textContent = 'Error! Try Again';
-                    console.error('Form submission error:', error);
-                    
-                    // Reset button after 3 seconds
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.disabled = false;
-                    }, 3000);
-                }
-            });
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
