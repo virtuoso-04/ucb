@@ -331,3 +331,45 @@ html {
     border-top: 1px solid var(--border-color);
 
 }
+
+/* Netlify Form Styles */
+.hidden {
+    display: none !important;
+}
+
+.email-box form {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    position: relative;
+}
+
+/* Form success message */
+.form-success {
+    color: var(--accent-color);
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.form-success.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Form error message */
+.form-error {
+    color: #ff4444;
+    margin-top: 10px;
+    font-size: 14px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.form-error.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
